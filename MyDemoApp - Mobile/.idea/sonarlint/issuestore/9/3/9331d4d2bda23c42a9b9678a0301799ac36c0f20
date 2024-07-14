@@ -1,0 +1,9 @@
+
+Ü
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(øÅÖõ8±ùï”‹2J$6caddb1c-6213-4720-99d5-2a3a9f87b765
+„
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(àãþ§8Š®Ó•‹2J$d2cd2421-38c1-4f9c-bb49-6ac7fd10a598
+n
+java:S1874'"+Remove this use of "URL"; it is deprecated.(Žœ×ù8Ž®Ó•‹2J$bacdca2d-1edd-4b01-a4c8-c62ba3099fc0
+s
+java:S18740"+Remove this use of "URL"; it is deprecated.(ŒÛø·ûÿÿÿÿ8‘®Ó•‹2J$4f1dbfc9-dac8-40b1-9969-2fc992064b52

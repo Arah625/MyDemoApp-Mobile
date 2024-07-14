@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MobileTests" parallel="false">
+
+    <test name="Android Tests">
+        <parameter name="device" value="emulator-5556" />
+        <parameter name="platform" value="ANDROID" />
+        <classes>
+            <class name="FirstTest" />
+        </classes>
+    </test>
+</suite>

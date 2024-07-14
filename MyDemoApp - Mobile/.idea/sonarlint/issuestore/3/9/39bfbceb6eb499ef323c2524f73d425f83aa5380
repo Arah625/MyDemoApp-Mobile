@@ -1,0 +1,6 @@
+
+	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(µ£ĞÍûÿÿÿÿ8¼­úôŠ2J$8e61ff1f-ff4f-4a81-a575-7fbcfd169b9a
+Û
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(êæ˜C8È®¿‹2J$f4336cb8-b6b0-478b-84de-ebfc2922e2b5
+s
+java:S18745"+Remove this use of "URL"; it is deprecated.(²Œ“«ıÿÿÿÿ8Ñ­úôŠ2J$52f694c6-f492-4937-b181-62b0eafd6d0b
