@@ -35,6 +35,7 @@ public abstract class InfoMessage extends BasicMessage {
     public static final String AFTER_CLASS_START = Color.yellow("Starting: " + Color.yellowBold("@AfterClass"));
     public static final String AFTER_CLASS_END = Color.yellow("Ending: {}");
     public static final String BROWSER_AND_MODE = AnsiColorPalette.applyColor("Starting {} browser in {} mode.", AnsiColorPalette.MAGENTA_BOLD, AnsiColorPalette.MAGENTA_BOLD);
+    public static final String SWITCHING_TO = AnsiColorPalette.applyColor("Switching context to: {}", AnsiColorPalette.GREEN, AnsiColorPalette.GREEN_BOLD);
     private static final Logger logger = LoggerFactory.getLogger(InfoMessage.class);
 
     public static void waitingForVisibilityOfElement(WebElement webElement) {
@@ -155,5 +156,9 @@ public abstract class InfoMessage extends BasicMessage {
 
     public static void browserAndMode(String browser, String mode) {
         logger.info(BROWSER_AND_MODE, browser, mode);
+    }
+
+    public static void switchingContext(String context) {
+        logger.info(SWITCHING_TO, context);
     }
 }

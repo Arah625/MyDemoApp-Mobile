@@ -3,8 +3,8 @@ package com.demoappmobile.screenutilities.action;
 import com.demoappmobile.Logger.ErrorMessage;
 import com.demoappmobile.Logger.InfoMessage;
 import com.demoappmobile.screenutilities.action.retry.ActionHandler;
-import com.demoappmobile.screenutilities.detection.ElementFinder;
 import com.demoappmobile.screenutilities.driver.DriverManager;
+import org.autoutils.detection.ElementFinder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -13,7 +13,8 @@ import java.util.function.Supplier;
 public class CommonMethods {
     private static final int DEFAULT_RETRY_COUNT = 3;
 
-    private final ElementFinder elementFinder = new ElementFinder();
+    private final ElementFinder elementFinder = new ElementFinder(DriverManager.getInstance().getDriver(), DriverManager.getInstance()
+                                                                                                                        .getWebDriverWait());
 
     /**
      * Sends text to a specified web element, retrying on failure.

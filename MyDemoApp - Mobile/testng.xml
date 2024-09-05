@@ -6,7 +6,11 @@
         <parameter name="device" value="emulator-5556" />
         <parameter name="platform" value="ANDROID" />
         <classes>
-            <class name="FirstTest" />
+            <class name="tests.SauceVideo" >
+                <methods>
+                    <include name="apiCalls"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

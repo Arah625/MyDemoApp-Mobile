@@ -1,5 +1,6 @@
 package com.demoappmobile.screenutilities;
 
+import com.demoappmobile.Logger.InfoMessage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.SupportsContextSwitching;
 
@@ -12,22 +13,30 @@ public class ContextSwitcher {
     }
 
     public void switchToWebView() {
-        if (driver instanceof SupportsContextSwitching contextSwitchingDriver) {
-            for (String context : contextSwitchingDriver.getContextHandles()) {
-                if (context.contains("WEBVIEW")) {
-                    contextSwitchingDriver.context(context);
-                    break;
-                }
-            }
-        } else {
-            throw new UnsupportedOperationException("Context switching is only supported for drivers that implement SupportsContextSwitching.");
-        }
+        switchContext("WEBVIEW");
     }
 
     public void switchToNative() {
+        switchContext("NATIVE_APP");
+    }
+
+    private void switchContext(String contextType) {
         if (driver instanceof SupportsContextSwitching contextSwitchingDriver) {
-            contextSwitchingDriver.context("NATIVE_APP");
+            if (contextType.equals("WEBVIEW")) {
+                for (String context : contextSwitchingDriver.getContextHandles()) {
+                    if (context.contains(contextType)) {
+                        contextSwitchingDriver.context(context);
+                        InfoMessage.switchingContext("WEBVIEW");
+                        return;
+                    }
+                }
+                throw new IllegalStateException("No WebView context found");
+            } else if (contextType.equals("NATIVE_APP")) {
+                contextSwitchingDriver.context(contextType);
+                InfoMessage.switchingContext("NATIVE");
+            }
         } else {
+            //TODO: Add Custom exception - Unknown/UnsupportedContextException
             throw new UnsupportedOperationException("Context switching is only supported for drivers that implement SupportsContextSwitching.");
         }
     }
